@@ -51,4 +51,22 @@ class TaskLisk {
               this.removeItem(taskItem);
             });
           });
+          item.style.borderBottom = '1px solid #aaa';
+
+          const checkBox = item.querySelector('.checkbox');
+          const todo = item.querySelector('.todo');
+          todo.classList.add('todo-style');
+          checkBox.addEventListener('click', this.clickCheck);
+    
+          list.append(item);
+        });
+      };
+      addTodo(desp, tasks) {
+        if (desp !== '') {
+          const todoItems = new TodoTask(desp, tasks);
+          this.tasks.push(todoItems);
+        }
+    
+        inputTodo.value = '';
+      }
     

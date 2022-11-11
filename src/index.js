@@ -11,3 +11,8 @@ class TodoTask {
     this.done = done;
   }
 }
+class TaskLisk {
+    constructor() {
+      this.tasks = [];
+    }
+  

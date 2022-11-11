@@ -12,17 +12,20 @@ class TodoTask {
   }
 }
 class TaskLisk {
-    constructor() {
-      this.tasks = [];
-    }
-    saveTolocal() {
-        localStorage.setItem('tasks', JSON.stringify(this.tasks));
-      }
+  constructor() {
+    this.tasks = [];
+  }
+
+  saveTolocal() {
+    localStorage.setItem('tasks', JSON.stringify(this.tasks));
+  }
+
     getFromLocal = () => {
-        this.tasks = localStorage.getItem('tasks')
+      this.tasks = localStorage.getItem('tasks')
         ? JSON.parse(localStorage.getItem('tasks'))
         : [];
-      };
+    };
+
       renderTodo = (list) => {
         list.innerHTML = '';
         this.tasks.forEach((el, i) => {
@@ -41,7 +44,7 @@ class TaskLisk {
               <i class="fa-solid fa-trash-can  icon-remove  hidden"></i>
               </div>
         `;
-        item.addEventListener('click', () => {
+          item.addEventListener('click', () => {
             const iconRemove = item.querySelector('.icon-remove');
             const iconDots = item.querySelector('.icon-dots');
             iconRemove.classList.toggle('hidden');
@@ -57,18 +60,20 @@ class TaskLisk {
           const todo = item.querySelector('.todo');
           todo.classList.add('todo-style');
           checkBox.addEventListener('click', this.clickCheck);
-    
+
           list.append(item);
         });
       };
+
       addTodo(desp, tasks) {
         if (desp !== '') {
           const todoItems = new TodoTask(desp, tasks);
           this.tasks.push(todoItems);
         }
-    
+
         inputTodo.value = '';
       }
+
       clickCheck = (e) => {
         const todo = e.target.parentNode.children[1];
         const div = e.target.parentNode;
@@ -77,6 +82,7 @@ class TaskLisk {
         todo.classList.toggle('line-through');
         this.saveTolocal();
       };
+
       removeFromLocal(index) {
         this.tasks = this.tasks.filter((task) => +task.index !== +index);
         this.tasks.forEach((el, i) => {
@@ -85,10 +91,14 @@ class TaskLisk {
         this.saveTolocal();
         this.renderTodo(list);
       }
-      
-  removeItem(item) {
-    const idItem = item.id;
-    this.removeFromLocal(idItem);
-  }
+
+      removeItem(item) {
+        const idItem = item.id;
+        this.removeFromLocal(idItem);
+      }
 }
 const myTasks = new TaskLisk();
+document.addEventListener('DOMContentLoaded', () => {
+  myTasks.getFromLocal(myTasks.tasks);
+  myTasks.renderTodo(list);
+});

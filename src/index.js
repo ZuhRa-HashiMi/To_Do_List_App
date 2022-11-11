@@ -23,3 +23,21 @@ class TaskLisk {
         ? JSON.parse(localStorage.getItem('tasks'))
         : [];
       };
+      renderTodo = (list) => {
+        list.innerHTML = '';
+        this.tasks.forEach((el, i) => {
+          const item = document.createElement('li');
+          item.classList.add('item');
+          item.id = i;
+          item.innerHTML = `
+              <div class="left-itmes">
+              <input type="checkbox" class="checkbox" ${el.done ? 'checked' : ''}>
+              <input type='text' class='todo ${
+                el.done ? 'line-through' : ''
+              }' value='${el.desp}'>
+              </div>
+              <div>
+              <i class="fa-solid fa-ellipsis-vertical icon-dots"></i>
+              <i class="fa-solid fa-trash-can  icon-remove  hidden"></i>
+              </div>
+        `;

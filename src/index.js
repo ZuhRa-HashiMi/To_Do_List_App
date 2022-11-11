@@ -102,3 +102,10 @@ document.addEventListener('DOMContentLoaded', () => {
   myTasks.getFromLocal(myTasks.tasks);
   myTasks.renderTodo(list);
 });
+addTodoBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    myTasks.addTodo(inputTodo.value, myTasks.tasks);
+    myTasks.renderTodo(list);
+    myTasks.saveTolocal();
+  });
+  

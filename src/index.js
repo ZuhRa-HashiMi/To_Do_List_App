@@ -41,3 +41,14 @@ class TaskLisk {
               <i class="fa-solid fa-trash-can  icon-remove  hidden"></i>
               </div>
         `;
+        item.addEventListener('click', () => {
+            const iconRemove = item.querySelector('.icon-remove');
+            const iconDots = item.querySelector('.icon-dots');
+            iconRemove.classList.toggle('hidden');
+            iconDots.classList.toggle('hidden');
+            iconRemove.addEventListener('click', (event) => {
+              const taskItem = event.target.parentNode.parentNode;
+              this.removeItem(taskItem);
+            });
+          });
+    

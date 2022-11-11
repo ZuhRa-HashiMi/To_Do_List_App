@@ -91,3 +91,4 @@ class TaskLisk {
     this.removeFromLocal(idItem);
   }
 }
+const myTasks = new TaskLisk();

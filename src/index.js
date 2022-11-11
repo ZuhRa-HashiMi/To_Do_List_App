@@ -85,3 +85,9 @@ class TaskLisk {
         this.saveTolocal();
         this.renderTodo(list);
       }
+      
+  removeItem(item) {
+    const idItem = item.id;
+    this.removeFromLocal(idItem);
+  }
+}

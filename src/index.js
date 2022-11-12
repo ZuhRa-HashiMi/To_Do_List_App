@@ -1,8 +1,10 @@
+/* eslint-disable no-unused-vars */
 import './style.css';
 
 const list = document.querySelector('.list');
 const inputTodo = document.querySelector('.add-todo');
 const addTodoBtn = document.querySelector('.submit');
+const clearSelectedToDoItems = document.querySelector('.clear');
 
 class TodoTask {
   constructor(desp, arr, done = false) {
@@ -14,6 +16,19 @@ class TodoTask {
 class TaskLisk {
   constructor() {
     this.tasks = [];
+  }
+
+  selectedTodos() {
+    const itemsArray = localStorage.getItem('tasks')
+      ? JSON.parse(localStorage.getItem('tasks'))
+      : [];
+
+    console.log('Get data from Local Storage: ', itemsArray);
+    const itemsToBeDeleted = itemsArray.filter((item) => item.done === false);
+    console.log('Items to be deleted: ', itemsToBeDeleted);
+    this.task = itemsToBeDeleted;
+    console.log('Save items to be deleted: ', this.task);
+    this.saveTolocal();
   }
 
   saveTolocal() {
@@ -107,4 +122,8 @@ addTodoBtn.addEventListener('click', (e) => {
   myTasks.addTodo(inputTodo.value, myTasks.tasks);
   myTasks.renderTodo(list);
   myTasks.saveTolocal();
+});
+clearSelectedToDoItems.addEventListener('click', (e) => {
+  e.preventDefault();
+  myTasks.selectedTodos();
 });

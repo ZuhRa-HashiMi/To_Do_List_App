@@ -15,7 +15,19 @@ class TaskLisk {
   constructor() {
     this.tasks = [];
   }
-
+// edit item
+  this.tasks.forEach((input, index) => {
+  input.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter' && input.value) {
+      this.update(input.value, index);
+    }
+  });
+  input.addEventListener('change', () => {
+    if (input.value) {
+      this.update(input.value, index);
+    }
+  });
+});
   saveTolocal() {
     localStorage.setItem('tasks', JSON.stringify(this.tasks));
   }

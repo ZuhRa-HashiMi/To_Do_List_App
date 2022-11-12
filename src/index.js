@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import './style.css';
 
 const list = document.querySelector('.list');
@@ -15,19 +16,8 @@ class TaskLisk {
   constructor() {
     this.tasks = [];
   }
-// edit item
-  this.tasks.forEach((input, index) => {
-  input.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter' && input.value) {
-      this.update(input.value, index);
-    }
-  });
-  input.addEventListener('change', () => {
-    if (input.value) {
-      this.update(input.value, index);
-    }
-  });
-});
+  // edit item
+
   saveTolocal() {
     localStorage.setItem('tasks', JSON.stringify(this.tasks));
   }
@@ -97,7 +87,7 @@ class TaskLisk {
 
       removeFromLocal(index) {
         this.tasks = this.tasks.filter((task) => +task.index !== +index);
-        this.tasks.forEach((el, i) => {
+        this.tasks.forEach((element, i) => {
           element.index = i + 1;
         });
         this.saveTolocal();

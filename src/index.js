@@ -7,7 +7,7 @@ const addTodoBtn = document.querySelector('.submit');
 class TodoTask {
   constructor(desp, arr, done = false) {
     this.desp = desp;
-    this.index = arr.length;
+    this.index = arr.length + 1;
     this.done = done;
   }
 }
@@ -98,7 +98,7 @@ class TaskLisk {
       removeFromLocal(index) {
         this.tasks = this.tasks.filter((task) => +task.index !== +index);
         this.tasks.forEach((el, i) => {
-          el.index = i;
+          element.index = i + 1;
         });
         this.saveTolocal();
         this.renderTodo(list);

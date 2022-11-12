@@ -1,34 +1,82 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Personal Portfolio Page
+# TODO_LIST
 
-> This is the Awesome books: plain JavaScript with objects that shows of my accomplishments as a software developer.
-
+> It's todo list App that I made it, using HTML, CSS and Javascript.
 
 
 ## Built With
 
-- HTML, CSS and JavaScript
+- Major languages
+- Frameworks
+- Technologies used
+
+## Live Demo (if available)
+
+[Live Demo Link](https://livedemo.com)
+
 
 ## Getting Started
+
+**## Steps to run the project
+
+- git clone `git@github.com:ZuhRa-HashiMi/To_Do_list_interactive-.git`
+
+- cd `To_Do_list_interactive-`
+
+- npm install
+
+- npm start.**
+
 
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
-- A simple web browser (preferably Chrome or Firefox)
-- An IDE
 
 ### Setup
-- Download this repository and open index.html file.
+
+### Install
+
+### Usage
+
+### Run tests
+
+### Deployment
+
+
 
 ## Authors
 
-👤 **Zuhra Hashimi**
+👤 **Author1**
 
-- GitHub: [@ZuhRa-HashiMi](https://github.com/ZuhRa-HashiMi)
-- Twitter: [@ZuhraHashimi4](https://twitter.com/ZuhraHashimi4)
-- LinkedIn: [zuhra-hashimi](https://www.linkedin.com/in/zuhra-hashimi-601966214/)
+- GitHub: [@githubhandle](https://github.com/githubhandle)
+- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+
+👤 **Author2**
+
+- GitHub: [@githubhandle](https://github.com/githubhandle)
+- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
+
+## 📝 License
+
+This project is [MIT](./LICENSE) licensed.
+
+_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
